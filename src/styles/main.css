@@ -1,0 +1,279 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body, main {
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    height: 28px;
+    padding-top: 5px;
+}
+
+main {
+    padding-top: 3px;
+}
+
+main h2 {
+    text-align: center;
+    margin-top: 40px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Segoe UI Light", sans-serif;
+    display: grid;
+}
+
+img {
+    display: block;
+}
+
+#drawer {
+    width: 250px;
+    height: 100%;
+    padding-top: 12px;
+    position: absolute;
+    margin-top: -5px;
+    transform: translate(-250px, 0);
+    transition: transform 0.3s ease-in-out;
+    background-color: #111;
+}
+
+#drawer.open {
+    transform: translate(0, 0)
+}
+
+#drawer ul {
+    list-style-type: none;
+    padding: 0 16px;
+}
+
+#drawer li {
+    padding: 16px 0;
+}
+
+#drawer li:hover {
+    background: darkblue;
+    border-radius: 4px;
+}
+
+#drawer a {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    padding: 15px 20px;
+}
+
+#drawer .drawer-title {
+    font-size: 26px;
+    padding: 18px 0;
+}
+
+.drawer-title {
+    padding: 16px;
+    font-weight: bold;
+    margin-left: 25%;
+}
+
+.main-title {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 26px;
+}
+
+#hamburger {
+    font-size: 32px;
+    text-decoration: none;
+    margin-left: 12px;
+    color: black;
+}
+
+.jumbotron {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.jumbotron-title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    padding-top: 30%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.wrapper {
+    margin: 20px 5%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.box {
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 10px;
+}
+
+.box img {
+    width: 100%;
+    height: 240px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.box p {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.box .title {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.box .info {
+    width: auto;
+    color: white;
+    background: #111111;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 0;
+    padding: 10px;
+}
+
+.box .info b {
+    color: chartreuse;
+}
+
+footer {
+    width: 100%;
+    background: #111111;
+    height: 60px;
+    color: white;
+    text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+    body {
+        display: grid;
+        grid-template-rows: 70px auto;
+    }
+
+    header {
+        height: 70px;
+        padding-top: 0;
+    }
+
+    #drawer {
+        width: 100%;
+        padding-top: 0;
+        margin-top: 0;
+        position: relative;
+        transform: translate(0, 0);
+    }
+
+    #drawer ul {
+        right: 0;
+        top: 4px;
+        position: absolute;
+    }
+
+    #drawer li {
+        padding: 24px 0;
+        display: inline;
+    }
+
+    #drawer li:hover {
+        background: darkblue;
+        border-radius: 0;
+    }
+
+    #drawer a {
+        padding: 24px 20px;
+    }
+
+    .drawer-title {
+        position: absolute;
+        left: 5%;
+        top: 0;
+        margin-left: 0;
+        padding: 16px;
+    }
+
+    .main-title {
+        display: none;
+    }
+
+    .jumbotron-title {
+        text-align: center;
+        font-size: 60px;
+        font-weight: bold;
+        padding-top: 10%;
+        margin-top: -3px;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+    }
+
+    .wrapper {
+        margin: 20px 4%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #hamburger {
+        display: none;
+    }
+}
+
+.skip-link {
+    position: absolute;
+    left: 0;
+    top: -40px;
+    background-color: darkblue;
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+@media screen and (min-width: 1000px) {
+    .drawer-title {
+        position: absolute;
+        left: 10%;
+        top: 0;
+        margin-left: 0;
+        padding: 16px;
+    }
+
+    #drawer ul {
+        right: 10%;
+        top: 4px;
+        position: absolute;
+    }
+
+    .wrapper {
+        margin: 20px 10%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
