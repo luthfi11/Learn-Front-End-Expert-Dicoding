@@ -1,6 +1,15 @@
 import 'regenerator-runtime';
 import '../styles/main.css';
-import './view/navigation.js';
-import main from './view/view.js';
+import '../styles/loader.css';
+import './view/navigation-drawer';
+import registerSW from './utils/register-sw';
+import Main from './view/main';
 
-document.addEventListener("DOMContentLoaded", main);
+document.addEventListener('DOMContentLoaded', () => {
+  registerSW();
+  Main.renderPage();
+});
+
+window.addEventListener('hashchange', () => {
+  Main.renderPage();
+});
