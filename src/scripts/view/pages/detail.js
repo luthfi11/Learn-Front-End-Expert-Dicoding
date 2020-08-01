@@ -1,12 +1,14 @@
 import ApiRepository from '../../data/api-repository';
 import UrlParser from '../../routes/url-parser';
+import SaveButtonInitiator from '../../utils/save-button-initiator';
 import '../../component/loading-indicator';
 import '../../component/restaurant-detail';
 
 class Detail {
   static async render() {
     return `<loading-indicator></loading-indicator>
-            <restaurant-detail id="content"></restaurant-detail>`;
+            <restaurant-detail id="content"></restaurant-detail>
+            <div id="saveButtonContainer"></div>`;
   }
 
   static async afterRender() {
@@ -16,8 +18,12 @@ class Detail {
 
     try {
       const response = await ApiRepository.getRestaurantDetail(url.id);
-      console.log(response);
       restaurantElement.restaurantItem = response;
+
+      await SaveButtonInitiator.init({
+        saveButtonContainer: document.querySelector('#saveButtonContainer'),
+        restaurant: response.restaurant,
+      });
     } catch (message) {
       restaurantElement.renderError(message);
     } finally {

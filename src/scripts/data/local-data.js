@@ -11,12 +11,18 @@ const dbPromise = idb.openDB(DATABASE_NAME, DATABASE_VERSION, {
 
 const LocalData = {
   async getRestaurantById(id) {
+    if (!id) {
+      return;
+    }
     return (await dbPromise).get(OBJECT_STORE_NAME, id);
   },
   async getAllSaved() {
     return (await dbPromise).getAll(OBJECT_STORE_NAME);
   },
   async saveRestaurant(item) {
+    if (!item.hasOwnProperty('id')) {
+      return;
+    }
     return (await dbPromise).put(OBJECT_STORE_NAME, item);
   },
   async deleteRestaurant(id) {

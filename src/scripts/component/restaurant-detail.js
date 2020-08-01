@@ -1,5 +1,4 @@
 import CONFIG from '../data/config';
-import './save-button';
 
 class RestaurantDetail extends HTMLElement {
   set restaurantItem(item) {
@@ -61,10 +60,6 @@ class RestaurantDetail extends HTMLElement {
             ${this._getFoods()}
             ${this._getDrinks()}
             ${this._getReviews()}`;
-
-    const saveButtonElement = document.createElement('save-button');
-    saveButtonElement.restaurantData = this.restaurant;
-    this.append(saveButtonElement);
   }
 
   renderError(message) {
