@@ -6,6 +6,10 @@ class Home {
   static async render() {
     return `
             <section class="jumbotron">
+                <img src="./images/heros/hero-image_2-large.jpg" 
+                     srcset="./images/heros/hero-image_2-small.jpg 480w, ./images/heros/hero-image_2-large.jpg 1280w"
+                     sizes="(max-width: 600px) 480px, 1280px"
+                     alt="Heroes Image"/>
                 <h1 class="jumbotron-title">Welcome to GoFuds!</h1>
             </section>
             
@@ -17,12 +21,9 @@ class Home {
   }
 
   static async afterRender() {
-    const jumbotronElement = document.querySelector('.jumbotron');
     const mainContent = document.querySelector('#content');
     const loadingElement = document.querySelector('loading-indicator');
     const restaurantListElement = document.querySelector('restaurant-list');
-
-    jumbotronElement.style.backgroundImage = "url('./images/heros/hero-image_2.jpg')";
 
     try {
       const response = await ApiRepository.getRestaurantList();

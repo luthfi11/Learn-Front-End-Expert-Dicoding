@@ -1,4 +1,6 @@
 import CONFIG from '../data/config';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 class RestaurantItem extends HTMLElement {
   set restaurantItem(restaurant) {
@@ -8,7 +10,7 @@ class RestaurantItem extends HTMLElement {
 
   render() {
     this.innerHTML = `
-            <img src="${CONFIG.BASE_IMAGE_URL}${this.restaurant.pictureId}" alt="${this.restaurant.name}">
+            <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL}${this.restaurant.pictureId}" alt="${this.restaurant.name}">
             <p class="info">${this.restaurant.city} <b>(${this.restaurant.rating})</b></p>
             <h3 class="title">${this.restaurant.name}</h3>
             <p>${this.restaurant.description}</p>
