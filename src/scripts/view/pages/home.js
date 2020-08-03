@@ -6,10 +6,12 @@ class Home {
   static async render() {
     return `
             <section class="jumbotron">
-                <img src="./images/heros/hero-image_2-large.jpg" 
-                     srcset="./images/heros/hero-image_2-small.jpg 480w, ./images/heros/hero-image_2-large.jpg 1280w"
-                     sizes="(max-width: 600px) 480px, 1280px"
-                     alt="Heroes Image"/>
+                <picture>
+                  <source media="(min-width:601px)" srcset="./images/heros/hero-image_2-large.jpg">
+                  <source media="(max-width:600px)" srcset="./images/heros/hero-image_2-small.jpg">
+                  <img src="./images/heros/hero-image_2-large.jpg" alt="Heroes Image">
+                </picture>
+                
                 <h1 class="jumbotron-title">Welcome to GoFuds!</h1>
             </section>
             
