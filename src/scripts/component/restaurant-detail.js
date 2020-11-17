@@ -35,8 +35,8 @@ class RestaurantDetail extends HTMLElement {
   }
 
   _getReviews() {
-    let reviews = '<b>Consumer Reviews</b>';
-    this.restaurant.consumerReviews.forEach((item) => {
+    let reviews = '<b>Customer Reviews</b>';
+    this.restaurant.customerReviews.forEach((item) => {
       reviews += `<div class="review">
                     <b>${item.name}</b><br>
                     <small>${item.date}</small><br>
