@@ -24,11 +24,36 @@ class Detail {
         saveButtonContainer: document.querySelector('#saveButtonContainer'),
         restaurant: response.restaurant,
       });
+
+      await this._addReview(url.id);
     } catch (message) {
       restaurantElement.renderError(message);
     } finally {
       loadingElement.style.display = 'none';
     }
+  }
+
+  static async _addReview(restoId) {
+    const reviewButton = document.getElementById('submitReview');
+    reviewButton.addEventListener('click', () => {
+      const customerName = document.getElementById('customerName').value;
+      const userReview = document.getElementById('reviews').value;
+
+      if (customerName !== '' || userReview !== '') {
+        const reviewData = {
+          id: restoId,
+          name: customerName,
+          review: userReview,
+        };
+
+        ApiRepository.addReview(reviewData)
+          .then(() => {
+            location.reload();
+          });
+      } else {
+        alert('Please fill out the form completely to add your review!');
+      }
+    });
   }
 }
 

@@ -1,4 +1,5 @@
 import CONFIG from '../data/config';
+import './review-form';
 
 class RestaurantDetail extends HTMLElement {
   set restaurantItem(item) {
@@ -59,7 +60,8 @@ class RestaurantDetail extends HTMLElement {
             <p>${this.restaurant.description}</p>
             ${this._getFoods()}
             ${this._getDrinks()}
-            ${this._getReviews()}`;
+            ${this._getReviews()}
+            <review-form></review-form>`;
   }
 
   renderError(message) {

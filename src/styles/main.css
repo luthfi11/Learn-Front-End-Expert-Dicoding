@@ -272,6 +272,51 @@ footer {
     text-align: center;
 }
 
+.review-form {
+    display: grid;
+    margin-top: 20px;
+}
+
+.review-form b {
+    margin-bottom: 8px;
+}
+
+.review-form input[type="text"] {
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    border: 1px #DDDDDD solid;
+    font-family: "Segoe UI Light", sans-serif;
+    font-size: 15px;
+}
+
+.review-form textarea {
+    padding: 10px;
+    height: 160px;
+    border-radius: 6px;
+    border: 1px #DDDDDD solid;
+    font-family: "Segoe UI Light", sans-serif;
+    font-size: 15px;
+    resize: none;
+}
+
+.review-form button {
+    width: 140px;
+    color: white;
+    background: dodgerblue;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 0;
+    justify-self: center;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.review-form button:hover {
+    background: darkblue;
+    cursor: pointer;
+}
+
 @media screen and (min-width: 600px) {
     body {
         display: grid;

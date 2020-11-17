@@ -69,7 +69,7 @@ module.exports = {
       clientsClaim: true,
       skipWaiting: true,
       runtimeCaching: [{
-        urlPattern: new RegExp('https://dicoding-restaurant-api.el.r.appspot.com/'),
+        urlPattern: new RegExp('https://restaurant-api.dicoding.dev/'),
         handler: 'StaleWhileRevalidate',
       }],
     }),
